@@ -48,8 +48,8 @@ body{
     left: 0;
     height: 100%;
     width: 100%;
-    border: 1px solid #1a1a2e;
     border-radius: 2rem;
+    border: 1px solid #1a1a2e;
 }
 .button::before{
     /* The goal here is to put a box with a different background-color than the button next to it */ 
@@ -80,5 +80,16 @@ body{
     /* I make the box slide to the left to override the button background */
     transform: translateX(100%);
 }
+
+.btn-arrow{
+    position: absolute;
+    margin-left: 20%;
+    top: 30%;
+    transition: transform 0.5s ease;
+}
+.button:hover .btn-arrow{
+    transform: rotateZ(1turn);
+}
+
 /* If you want to add a background to the button before the over then put the line z-index: 2; (in .card) to a .card:hover
 and set a background in .card */
