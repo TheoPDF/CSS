@@ -1,0 +1,68 @@
+*,
+*::before,
+*::after{
+    box-sizing: border-box;
+}
+
+body{
+    place-items: center;
+    height: 40rem;
+    display: grid;
+    background-color: #1a1a2e;
+}
+.title{
+    font-size: 3rem;
+}
+.card{
+    width: 20rem;
+    height: 30rem;
+    background-color: whitesmoke;
+    font-family: tahoma;
+    text-align: center;
+    padding: 0.5rem;
+}
+
+
+.button{
+    margin-top: 4rem;
+    width: 10rem;
+    height: 2rem;
+    border-radius: 2rem;
+    color: #1a1a2e;
+    transition: transform 0.3s ease;
+    position: relative;
+    display: inline-block;
+    z-index: 2;
+    overflow: hidden;
+    border: none;
+}
+.button::after{
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    border: 1px solid #1a1a2e;
+    border-radius: 2rem;
+}
+.button::before{
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: #1a1a2e;
+    margin-left: -100%;
+    border-radius: 2rem;
+    transition: transform 0.5s ease;
+    z-index: -2;
+}
+.button:hover{
+    color: whitesmoke;
+    transition: color 0.5s linear;
+}
+.button:hover::before{
+    transform: translateX(100%);
+}
