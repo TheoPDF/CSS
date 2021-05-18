@@ -1,8 +1,14 @@
+*,
+*::before,
+*::after{
+    box-sizing: border-box;
+}
 body{
     place-items: center;
     height: 40rem;
     display: grid;
     background-color: #1a1a2e;
+    font-family: Tahoma;
 }
 .card{
     width: 20rem;
@@ -20,9 +26,7 @@ body{
     transform-style: preserve-3d;
 
     /* style du texte */
-    font-size: 2rem;
-    font-family: Tahoma;
-    color: white;
+    color: #808080;
 }
 .card:hover .card_content{
     /* on retourne la carte */
@@ -45,13 +49,11 @@ body{
     /* la rotation de 0.5turn permet de faire passer le contenue de cette classe à l'arrière */
     transform: rotateY(0.5turn);
     /* on définit un style pour l'arrière de la carte seulement */
-    background-image: url("img/2.jpg");
-    background-attachment: cover;
+    background-color: whitesmoke;
 }
 .card_front{
     /* on définit un style pour l'avant de la carte seulement */
-    background-image: url("img/1.jpg");
-    background-attachment: cover;
+    background-color: whitesmoke;
 }
 
 /*on ajoute les bordure*/
@@ -66,18 +68,20 @@ body{
     left: var(--spacer);
     right: var(--spacer);
 
-    border: 3px solid white;
+    border: 3px solid #808080;
     transform: translateZ(5rem);
 }
 .back{
     /* donne au texte une certaine distance en avant */
-    transform: translateZ(5rem);
+    transform: translateZ(10rem);
+    font-size: 3rem;
 }
 .front{
     /* donne au texte une certaine distance en avant */
     transform: translateZ(10rem);
-    background-color: #1a1a2e;
-    border:2px solid white;
-    margin-left: 1.5rem;
-    margin-right: 1.5rem;
+    font-size: 3rem;
+}
+p{
+    padding-left: 1rem;
+    padding-right: 1rem;
 }

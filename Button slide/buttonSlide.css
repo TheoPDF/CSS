@@ -3,12 +3,12 @@
 *::after{
     box-sizing: border-box;
 }
-
 body{
     place-items: center;
     height: 40rem;
     display: grid;
     background-color: #1a1a2e;
+    font-family: tahoma;
 }
 .title{
     font-size: 3rem;
@@ -17,7 +17,6 @@ body{
     width: 20rem;
     height: 30rem;
     background-color: whitesmoke;
-    font-family: tahoma;
     text-align: center;
     padding: 0.5rem;
 }
@@ -63,7 +62,6 @@ body{
     /* I make sure the box is lower (in term of position on the plan) than the button to not hide it */
     z-index: -2;
 
-    /* we can have "background-color: darken(whitesmoke, 15%);" instead */
     background-color: #1a1a2e;
 
     /* I make the box not appear on the button and make it disappear on the right */
