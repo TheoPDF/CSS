@@ -24,19 +24,24 @@ body{
 
 
 .button{
+    /* I ceate a button that will get override*/
     margin-top: 4rem;
     width: 10rem;
     height: 2rem;
     border-radius: 2rem;
+    /*so there is no background color */
     color: #1a1a2e;
-    transition: transform 0.3s ease;
+    /* I make the button all good for the elements that I will add to it */
     position: relative;
     display: inline-block;
-    z-index: 2;
     overflow: hidden;
     border: none;
+    /* I make the button go higher on the plan than the other element (not visible) */
+    z-index: 2;
+    transition: transform 0.3s ease;
 }
 .button::after{
+    /* The goal here is to create some border that will fit even when the ::before element will be here */ 
     content: '';
     position: absolute;
     bottom: 0;
@@ -47,22 +52,33 @@ body{
     border-radius: 2rem;
 }
 .button::before{
+    /* The goal here is to put a box with a different background-color than the button next to it */ 
     content: '';
     position: absolute;
     bottom: 0;
     left: 0;
     height: 100%;
     width: 100%;
-    background-color: #1a1a2e;
-    margin-left: -100%;
     border-radius: 2rem;
-    transition: transform 0.5s ease;
+    /* I make sure the box is lower (in term of position on the plan) than the button to not hide it */
     z-index: -2;
+
+    /* we can have "background-color: darken(whitesmoke, 15%);" instead */
+    background-color: #1a1a2e;
+
+    /* I make the box not appear on the button and make it disappear on the right */
+    margin-left: -100%;
+    /* make the transition smooth and nice */
+    transition: transform 0.5s ease;
 }
 .button:hover{
+    /* I change the text color because the background-color will change, and I make the animation of it smooth and nice */ 
     color: whitesmoke;
     transition: color 0.5s linear;
 }
 .button:hover::before{
+    /* I make the box slide to the left to override the button background */
     transform: translateX(100%);
 }
+/* If you want to add a background to the button before the over then put the line z-index: 2; (in .card) to a .card:hover
+and set a background in .card */
